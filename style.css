@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     display: grid;
+    grid-template-rows: 1fr 1fr;
     place-content: center;
 }
 
@@ -10,3 +11,40 @@ canvas{
     height: 400px;
     background-color: #000000;   
 }
+
+.touches{
+    width: fit-content;
+    height: fit-content;
+    margin: 2em auto 0;
+    display: grid;
+    grid-template-areas: 'up up'
+                         'leftt rightt'
+                         'down down';
+    place-items: center;
+}
+#up{
+    grid-area: up;
+}
+#left{
+    grid-area: leftt;
+}
+#right{
+    grid-area: rightt;
+}
+#down{
+    grid-area: down;
+}
+
+button{
+    width: 6em;
+    height: 3em;
+    margin: 0;
+    background-color: rgba(27, 197, 197, .3);
+    border-radius: 50%;
+}
+
+button:hover{
+    background-color: rgba(16, 139, 139, 0.6);
+}
+
+

@@ -3,6 +3,11 @@ let ctx = canvas.getContext('2d');
 canvas.width = 400;
 canvas.height = 400;
 
+let up = document.getElementById('up');
+let left = document.getElementById('left');
+let right = document.getElementById('right');
+let down = document.getElementById('down');
+
 let size = 20;
 let rows = canvas.height/size;
 let cols = canvas.width/size;
@@ -186,4 +191,30 @@ function moveSnake(){
     if (candy == null)placeCandy();
     else candy.render();
 }
+
+
+up.addEventListener('click', ()=>{
+    if (directionY != 1){
+        directionY = -1; 
+        directionX = 0;
+ }
+});
+right.addEventListener('click', ()=>{
+    if (directionX != -1){
+        directionX = 1; 
+        directionY = 0;
+ }
+});
+left.addEventListener('click', ()=>{
+    if (directionX != 1){
+        directionX = -1; 
+        directionY = 0;
+ }
+});
+down.addEventListener('click', ()=>{
+    if (directionY != -1){
+        directionY = 1; 
+        directionX =0;
+ }
+});
 
